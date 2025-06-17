@@ -65,11 +65,29 @@ fn main() {
 
     // • 生成第 n 个斐波那契数。
 
-    let n = 10;
-    let mut fib = vec![0, 1];
-    for i in 2..n {
-        let next_fib = fib[i - 1] + fib[i - 2];
-        fib.push(next_fib);
-    }
-    println!("The {}th Fibonacci number is: {}", n, fib[n - 1]);
+    // let n = 10;
+    // let mut fib = vec![0, 1];
+    // for i in 2..n {
+    //     let next_fib = fib[i - 1] + fib[i - 2];
+    //     fib.push(next_fib);
+    // }
+    // println!("The {}th Fibonacci number is: {}", n, fib[n - 1]);
+
+    let s1 = String::from("hello");
+    // let s2 = s1; // s1 的所有权被转移到 s2，s1 现在无效
+    // println!("{}", s1); // 这行会导致编译错误，因为 s1 已经无效
+    // println!("{}", s2); // 这行是有效的，因为 s2 拥有
+
+    // s1 的所有权
+    // 解决方法是使用克隆来创建 s1 的副本
+    println!("s1 is: {}", s1);
+
+    let (s2, len) = calculate_length(s1); // s1 的所有权被转移到 calculate_length 函数
+    println!("The length of '{}' is {}.", s2, len);
+    // println!("after s1 is: {}", s1); // 这行会导致编译错误，因为 s1 的所有权已经被转移
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let len = s.len();
+    (s, len)
 }
