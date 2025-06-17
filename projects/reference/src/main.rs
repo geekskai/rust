@@ -1,5 +1,5 @@
 fn main() {
-    let s1 = String::from("hello");
+    let mut s1 = String::from("hello");
 
     // let (s2, len) = calculate_length(s1); // s1 的所有权被转移到 calculate_length 函数
     // println!("The length of '{}' is {}.", s2, len);
@@ -7,10 +7,10 @@ fn main() {
     // let len = calculate_length1(&s1); // 传递 s1 的引用
     // println!("The length of '{}' is {}.", s1, len);
 
-    change(&s1);
+    change(&mut s1);
 }
 
-fn change(s: &String) {
+fn change(s: &mut String) {
     s.push_str(", world!"); // 试图修改不可变引用
 }
 
