@@ -8,6 +8,7 @@ fn main() {
     // println!("The length of '{}' is {}.", s1, len);
 
     change(&mut s1);
+    println!("s1 after change: {}", s1);
 }
 
 fn change(s: &mut String) {
