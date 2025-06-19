@@ -12,6 +12,7 @@ fn main() {
 
     let s1 = String::from("hello world");
     let word = first_word(&s1); // 获取第一个单词的引用
+                                // s1.clear(); // 清空字符串 s1 // 这行会报错，因为 word 仍然引用 s1 的内容
     println!("The first word is: {}", word);
 }
 
