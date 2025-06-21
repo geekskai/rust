@@ -5,8 +5,11 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
+    // fn area(&self) -> u32 {
+    //     self.width * self.height
+    // }
+    fn height(&self) -> bool {
+        self.height > 0
     }
 }
 
@@ -17,7 +20,13 @@ fn main() {
         width: 30 * scale,
         height: 50,
     };
-    println!("rect1 is {}", rect1.area());
+
+    if rect1.height() {
+        println!("rect1's {}", rect1.width);
+    } else {
+        println!("rect1's height is not greater than 0");
+    }
+    // println!("rect1 is {}", rect1.area());
     // rect1.area();
     // let rect1 = Rectangle {
     //     width: dbg!(30 * scale),
