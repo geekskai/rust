@@ -8,24 +8,39 @@ impl Rectangle {
     // fn area(&self) -> u32 {
     //     self.width * self.height
     // }
-    fn height(&self) -> bool {
-        self.height > 0
+    // fn height(&self) -> bool {
+    //     self.height > 0
+    // }
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
     }
 }
 
 fn main() {
-    let scale = 3;
+    // let scale = 3;
 
     let rect1 = Rectangle {
-        width: 30 * scale,
+        width: 30,
         height: 50,
     };
 
-    if rect1.height() {
-        println!("rect1's {}", rect1.width);
-    } else {
-        println!("rect1's height is not greater than 0");
-    }
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+
+    println!("rect1 can hold rect2: {}", rect1.can_hold(&rect2));
+    println!("rect1 can hold rect3: {}", rect1.can_hold(&rect3));
+
+    // if rect1.height() {
+    //     println!("rect1's {}", rect1.width);
+    // } else {
+    //     println!("rect1's height is not greater than 0");
+    // }
     // println!("rect1 is {}", rect1.area());
     // rect1.area();
     // let rect1 = Rectangle {
