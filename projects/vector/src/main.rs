@@ -34,17 +34,17 @@ fn main() {
     // s.push('!'); // 合法，String 可变
     // data.push('!'); // 不合法，&str 不可变
 
-    let data = "hello world";
+    // let data = "hello world";
 
-    // let s = data.to_string();
+    // // let s = data.to_string();
 
-    println!("The string is: {}", data);
+    // println!("The string is: {}", data);
 
-    for c in "Зд".chars() {
-        println!("{c}");
-    }
+    // for c in "Зд".chars() {
+    //     println!("{c}");
+    // }
 
-    for b in "Зд".bytes() {
-        println!("{b}");
-    }
+    // for b in "Зд".bytes() {
+    //     println!("{b}");
+    // }
 }
