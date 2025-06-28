@@ -1,6 +1,6 @@
 mod front_of_house {
-    mod hosting {
-        fn add_to_wait_list() {}
+    pub mod hosting {
+        pub fn add_to_wait_list() {}
         fn seat_at_table() {}
     }
     mod serving {
