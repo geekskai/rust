@@ -1,6 +1,8 @@
 mod front_of_house {
     pub mod hosting {
-        pub fn add_to_wait_list() {}
+        pub fn add_to_wait_list() {
+            println!("added to wait list!");
+        }
         fn seat_at_table() {}
     }
     mod serving {
@@ -35,10 +37,19 @@ mod back_of_house {
 //     front_of_house::hosting::add_to_wait_list();
 // }
 
+use crate::front_of_house::hosting;
+
+// mod customer {
+//     pub fn eat_at_restaurant() {
+//         hosting::add_to_wait_list();
+//     }
+// }
+
 pub fn eat_at_restaurant() {
-    let mut meal = back_of_house::Breakfast::summer("Rye");
-    meal.toast = String::from("Wheat");
-    println!("I'd like {} toast please", meal.toast);
+    hosting::add_to_wait_list();
+    // let mut meal = back_of_house::Breakfast::summer("Rye");
+    // meal.toast = String::from("Wheat");
+    // println!("I'd like {} toast please", meal.toast);
 
     // Trying to access the private field (this will fail)
     // println!("I'd like {} please", meal.seasonal_fruit);
