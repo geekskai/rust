@@ -1,6 +1,32 @@
 // use aggregator::{NewsArticle, SocialPost, Summary};
 use aggregator::{SocialPost, Summary};
 
+// pub fn notify(item: &impl Summary) {
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}
+
+fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {
+    0
+}
+
+fn some_function_where<T, U>(t: &T, u: &U) -> i32
+where
+    T: Display + Clone,
+    U: Clone + Debug,
+{
+    0
+}
+
+fn returns_summarizable(item: &impl Summary) -> impl Summary {
+    SocialPost {
+        username: String::from("example_user"),
+        content: String::from("This is an example content."),
+        reply: false,
+        repost: false,
+    }
+}
+
 fn main() {
     let post = SocialPost {
         username: String::from("horse_ebooks"),
@@ -21,4 +47,6 @@ fn main() {
     // };
 
     // println!("1 new article: {}", article.summarize());
+
+    notify(&post);
 }
