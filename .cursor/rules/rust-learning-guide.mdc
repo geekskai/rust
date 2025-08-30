@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+---
+
+# Rust 学习指导 - 面向前端开发者
+
+## 项目结构
+
+这是一个 Rust 学习项目，包含多个练习项目在 `projects/` 目录下。每个项目都有：
+
+- `Cargo.toml` - 项目配置文件（类似 package.json）
+- `src/main.rs` 或 `src/lib.rs` - 主要代码文件
+- `target/` - 编译输出目录（类似 node_modules，可忽略）
+
+## 学习者背景
+
+学习者是有 React/JavaScript 经验的前端开发者，刚开始学习 Rust。
+
+## 解释风格要求
+
+当解释 Rust 代码时，请：
+
+1. **总是提供 JavaScript/React 对比**：用熟悉的 JS 概念解释 Rust 概念
+2. **使用类比**：将 Rust 的概念映射到 JS/React 中的等价概念
+3. **强调差异**：特别说明 Rust 独有的概念（所有权、借用、类型安全等）
+4. **实用建议**：提供从 JS 思维过渡到 Rust 思维的具体建议
+
+## 核心概念映射
+
+- `struct` ↔ `class` 或对象字面量
+- `enum` ↔ `const` 对象或 TypeScript enum
+- `impl` ↔ 类方法定义
+- `Option<T>` ↔ `T | null | undefined`
+- `&self` ↔ `this`
+- 闭包 `|| {}` ↔ 箭头函数 `() => {}`
+- `match` ↔ `switch` 语句（但更强大）
+- `Vec<T>` ↔ `Array<T>`

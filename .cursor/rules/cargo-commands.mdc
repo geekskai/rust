@@ -1,0 +1,49 @@
+---
+globs: Cargo.toml,Cargo.lock
+---
+
+# Cargo 项目管理指南
+
+## Cargo 与 npm 对比
+
+| Cargo 命令               | npm 等价命令    | 功能说明           |
+| ------------------------ | --------------- | ------------------ |
+| `cargo new project_name` | `npm init`      | 创建新项目         |
+| `cargo build`            | `npm run build` | 编译项目           |
+| `cargo run`              | `npm start`     | 运行项目           |
+| `cargo test`             | `npm test`      | 运行测试           |
+| `cargo check`            | `npm run lint`  | 检查代码（不编译） |
+| `cargo doc --open`       | -               | 生成并打开文档     |
+
+## 文件对比
+
+| Rust 文件     | JavaScript 等价          | 说明           |
+| ------------- | ------------------------ | -------------- |
+| `Cargo.toml`  | `package.json`           | 项目配置和依赖 |
+| `Cargo.lock`  | `package-lock.json`      | 锁定依赖版本   |
+| `src/main.rs` | `src/index.js`           | 程序入口点     |
+| `src/lib.rs`  | `src/index.js` (库)      | 库的入口点     |
+| `target/`     | `node_modules/`, `dist/` | 编译输出目录   |
+
+## 常用工作流
+
+1. **开发阶段**：
+
+   - `cargo check` - 快速检查语法错误
+   - `cargo run` - 编译并运行
+   - `cargo test` - 运行测试
+
+2. **调试阶段**：
+
+   - `cargo build` - 编译但不运行
+   - `cargo run --verbose` - 显示详细信息
+
+3. **发布阶段**：
+   - `cargo build --release` - 优化编译
+   - `cargo doc` - 生成文档
+
+## 项目结构最佳实践
+
+- 将相关的练习放在不同的项目目录中
+- 使用有意义的项目名称
+- 保持 `Cargo.toml` 简洁明了
